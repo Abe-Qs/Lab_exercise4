@@ -1,60 +1,51 @@
 #include <stdio.h>
 
- int main (){
-
-    char completeName[30];
-    char Section[10];
-    int age;
-    int score;
+int main() {
+    char name[50], section[20], grade1_str[3], grade2_str[3], grade3_str[3], grade4_str[3]; 
+    float grade1, grade2, grade3, grade4, average;
+    char remarks[20];
 
 
-    printf("Grading System\n");
-    
-    printf("Enter your Complete name: ");
-    fgets(completeName, sizeof(completeName), stdin);
-    
-    printf("Enter your Section: ");
-    fgets(Section, sizeof(Section), stdin);
+    printf("Enter Complete Name: ");
+    fgets(name, sizeof(name), stdin);
 
-    printf("Enter your Age: ");
-    fgets(age, sizeof(age), stdin); 
+    printf("Enter Section: ");
+    fgets(section, sizeof(section), stdin);
 
-    printf("Enter your score(0-70): ");
-    scanf("%d", &score);
+   
+    printf("\nEnter 1st Quarter Grade: ");
+    scanf("%f", &grade1);
 
-    printf("\n");
-    printf("------USER INFORMATION-------\n");
-    printf("\n");
+    printf("Enter 2nd Quarter Grade: ");
+    scanf("%f", &grade2);
 
-    printf("Name: %s", completeName);
-    printf("Section: %s", Section);
-    printf("Age: %s", age);
-    printf("Score: %d\n", score);
-    printf("\n");
+    printf("Enter 3rd Quarter Grade: ");
+    scanf("%f", &grade3);
 
-    if (score >= 60){
-        printf("Grade: A\n");
-    } else if (score >= 55){
-        printf("Grade: A-\n");
-    } else if (score >= 50){
-        printf("Grade: B\n");
-    } else if (score >= 45){
-        printf("Grade: B-\n");
-    } else if (score >= 40){
-        printf("Grade: C\n");
-    } else if (score >= 35){
-        printf("Grade: C-\n");
-    } else if (score >= 30){
-        printf("Grade: D\n");
-    } else if (score >= 25){
-        printf("Grade: D-\n");
+    printf("Enter 4th Quarter Grade: ");
+    scanf("%f", &grade4);
+
+   
+    average = (grade1 + grade2 + grade3 + grade4) / 4;
+
+   
+    if (average >= 90 && average <= 100) {
+        printf(remarks, "Outstanding");
+    } else if (average >= 85 && average <= 89) {
+        sprintf(remarks, "Very Satisfactory");
+    } else if (average >= 80 && average <= 84) {
+        sprintf(remarks, "Satisfactory");
+    } else if (average >= 75 && average <= 79) {
+        sprintf(remarks, "Fair");
     } else {
-        printf("Grade: Failed\n");
+        sprintf(remarks, "Failed");
     }
 
    
+    printf("\nStudent: %s", name);
+    printf("Section: %s", section);
+    printf("General Average: %.2f\n", average);
+    printf("Remarks: %s\n", remarks);
 
-
-   
- return 0;
- }
+    return 0;
+}
