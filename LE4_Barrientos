@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+ int main (){
+
+    char completeName[30];
+    char Section[10];
+    int age;
+    int score;
+
+
+    printf("Grading System\n");
+    
+    printf("Enter your Complete name: ");
+    fgets(completeName, sizeof(completeName), stdin);
+    
+    printf("Enter your Section: ");
+    fgets(Section, sizeof(Section), stdin);
+
+    printf("Enter your Age: ");
+    fgets(age, sizeof(age), stdin); 
+
+    printf("Enter your score(0-70): ");
+    scanf("%d", &score);
+
+    printf("\n");
+    printf("------USER INFORMATION-------\n");
+    printf("\n");
+
+    printf("Name: %s", completeName);
+    printf("Section: %s", Section);
+    printf("Age: %s", age);
+    printf("Score: %d\n", score);
+    printf("\n");
+
+    if (score >= 60){
+        printf("Grade: A\n");
+    } else if (score >= 55){
+        printf("Grade: A-\n");
+    } else if (score >= 50){
+        printf("Grade: B\n");
+    } else if (score >= 45){
+        printf("Grade: B-\n");
+    } else if (score >= 40){
+        printf("Grade: C\n");
+    } else if (score >= 35){
+        printf("Grade: C-\n");
+    } else if (score >= 30){
+        printf("Grade: D\n");
+    } else if (score >= 25){
+        printf("Grade: D-\n");
+    } else {
+        printf("Grade: Failed\n");
+    }
+
+   
+
+
+   
+ return 0;
+ }
